@@ -1,10 +1,6 @@
 import requests
 import pandas as pd
-# import numpy as np
-# import time
 from utils import headers, queries
-import tabulate
-# import sys
 
 startindex=0
 
@@ -91,9 +87,6 @@ for targetgroup in ['Men', 'Women', 'Boys', 'Girls']:
 
         # Append the SKU article to the final Dataframe
         df = df.append(articleSKU, ignore_index=True)
-        if artnr == 2:
-          with open('out.txt', 'w') as f:
-            print(df.drop("Category04", axis=1).to_markdown(), file=f)  # Python 3.x
 
     # Get next 240 articles (=max stepsize)
     index = index + 240
