@@ -1,5 +1,6 @@
 # Webscrapers
 
+<<<<<<< HEAD
 |    |    ASP | Color       |    OSP | Size   |   Stock | URL | brand        | category01   | category02   | category03   | category04   |       code | name |
 |---:|-------:|:------------|-------:|:-------|--------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|:-------------|:-------------|:-------------|:-------------|-----------:|:------------------------------------------|
 |  0 | 149.95 | Donkerblauw | 149.95 | XS     |       7 | //cdn-1.debijenkorf.nl/web_detail/airforce-softshell-jack-met-borstzak/?reference=038/540/13_0385405000386002_pro_mod_frt_01_1108_1528_5036995.jpg                   | Airforce     | Men          | Kleding      | Jassen       |              | 3854050003 | Softshell jack met borstzak               |
@@ -63,3 +64,9 @@ logo en capuchon |
 logo en capuchon |
 | 42 | 470    | Zwart       | 470    | XXL    |       8 | //cdn-1.debijenkorf.nl/web_detail/stone-island-40727-softshell-jack-met-logo-en-capuchon/?reference=082/560/13_0825605000212002_pro_mod_frt_01_1108_1528_4960411.jpg | Stone Island | Men          | Kleding      | Jassen       |              | 8256050002 | 40727 softshell jack met 
 logo en capuchon |
+=======
+ |    |    ASP | Color       |    OSP | Size   |   Stock | URL
+                                    | brand    | category01   | category02   | category03   | category04   |       code | name                        |
+|---:|-------:|:------------|-------:|:-------|--------:|:---------------------------------------------------------------------------------------------------------------------------------------------------|:---------|:-------------|:-------------|:-------------|:-------------|-----------:|:----------------------------|
+|  0 | 149.95 | Donkerblauw | 149.95 | XS     |       7 | //cdn-1.debijenkorf.nl/web_detail/airforce-softshell-jack-met-borstzak/?reference=038/540/13_0385405000386002_pro_mod_frt_01_1108_1528_5036995.jpg | Airforce | Men          | Kleding      | Jassen       |              | 3854050003 | Softshell jack met borstzak |
+>>>>>>> 8b3a8ec209fba581e4767543870d528ce7016642
