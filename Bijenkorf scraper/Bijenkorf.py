@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 from utils import headers, queries
+import datetime
 
 startindex=0
 
@@ -87,8 +88,9 @@ for targetgroup in ['Men', 'Women', 'Boys', 'Girls']:
 
         # Append the SKU article to the final Dataframe
         df = df.append(articleSKU, ignore_index=True)
-
     # Get next 240 articles (=max stepsize)
     index = index + 240
+
+df.to_pickle(f"Bijenkorf-{datetime.date.today()}.pkl")
 
 
