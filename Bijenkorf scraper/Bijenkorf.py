@@ -55,23 +55,23 @@ for targetgroup in ['Men', 'Women', 'Boys', 'Girls']:
     for data in productList:
       artnr+=1
 
-      articleSKU['brand'] = data['brand']['name']
-      articleSKU['code'] = data['code']
-      articleSKU['name'] = data['name']
+      articleSKU['Brand'] = data['brand']['name']
+      articleSKU['Code'] = data['code']
+      articleSKU['Name'] = data['name']
 
       print(f'Article {artnr}/{totalItemCount}: {data["name"]}')
 
       # Query detailed data for current article
-      articleQuery = query_article(articleSKU['code'], data['currentVariantProduct']['code'], referer)
+      articleQuery = query_article(articleSKU['Code'], data['currentVariantProduct']['code'], referer)
 
-      articleSKU['category01'] = targetgroup
+      articleSKU['Category01'] = targetgroup
       
       # Category 2 untill 4 may sometimes be missing
       for i in range(2,5):
         try:
-          articleSKU[f'category0{i}'] = articleQuery['data']['product']['categoryPath'][i]['name']
+          articleSKU[f'Category0{i}'] = articleQuery['data']['product']['categoryPath'][i]['name']
         except (IndexError, TypeError):
-          articleSKU[f'category0{i}'] = None
+          articleSKU[f'Category0{i}'] = None
 
       # Obtain data on a SKU level
       for data in articleQuery['data']['product']['variantProducts']:
@@ -83,7 +83,7 @@ for targetgroup in ['Men', 'Women', 'Boys', 'Girls']:
           articleSKU['ASP'] = articleSKU['OSP']
 
         # Default = low quality, web_detail = high_quality
-        articleSKU['URL'] = data['selectionImage']['url'].replace('default', 'web_detail')
+        articleSKU['Image URL'] = data['selectionImage']['url'].replace('default', 'web_detail')
 
         articleSKU['Size'] = data['size']
         articleSKU['Color'] = data['color']
@@ -92,8 +92,8 @@ for targetgroup in ['Men', 'Women', 'Boys', 'Girls']:
         # Append the SKU article to the final Dataframe
         df = df.append(articleSKU, ignore_index=True)
         if artnr == 2:
-          print(df.to_markdown())
-          #exit()
+          with open('out.txt', 'w') as f:
+            print(df.drop("Category04", axis=1).to_markdown(), file=f)  # Python 3.x
 
     # Get next 240 articles (=max stepsize)
     index = index + 240
