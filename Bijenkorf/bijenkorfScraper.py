@@ -93,9 +93,11 @@ def scrape():
                 except Exception:
                     print(f"TypeError on article {articleSKU['name']}, code:{articleSKU['code']} & variantCode: {data['currentVariantProduct']['code']}. Skipping...")
                     skipped.append(articleSKU['Name']) 
-                
+            
             # Get next 240 articles (max stepsize)
             index += 240
+            
+        
 
     df['Date'] = datetime.date.today()
     # save problematic articles for manual investigation to further improve the scraper

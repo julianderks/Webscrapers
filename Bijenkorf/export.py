@@ -15,6 +15,6 @@ def to_DWH():
     engine = sqlalchemy.create_engine("mssql+pyodbc:///?odbc_connect=%s" % params)
     cnxn = engine.connect()
 
-    # Append to table in Datawarehouse table
+    # Append to table in Datawarehouse
     df.to_sql(name='Scraper_bijenkorf', con=engine, index=False, if_exists='append', chunksize=math.floor(2100/13), method='multi')
     print("Data saved to DWH!")
