@@ -1,6 +1,11 @@
-from Bijenkorf import bijenkorfScraper, export
+
+from Bijenkorf import bijenkorfScraper
+from Wehkamp import wehkampScraper
+import export
 
 # Call bijenkorf scraper and which saves the resulting table as a pickle file
-bijenkorfScraper.scrape()
-# Upload the pickle file to the Datawarehouse
-export.to_DWH()
+bijenkorfScraper.scrape_website()
+export.to_DWH(table = 'bijenkorf_articles')
+# Call bijenkorf scraper and which saves the resulting table as a pickle file
+wehkampScraper.scrape_website()
+export.to_DWH(table = 'wehkamp_articles')
